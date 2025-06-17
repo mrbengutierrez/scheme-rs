@@ -4,3 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+
+
+# Testing config
+[lib]
+doctest = false
+
+[[bin]]
+name = "rust_dsl"
+path = "src/main.rs"
+test = false
