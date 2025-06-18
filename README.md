@@ -2,6 +2,11 @@
 
 A Rust-based Racket interpreter. Just a fun little project.
 
+## 🌐 Live Demo
+
+Try the playground in your browser:  
+https://mrbengutierrez.github.io/racket-rs/
+
 ## 🛠 Building
 
 To build the native CLI:
@@ -12,11 +17,6 @@ make build-web
 
 To clean both:
 make clean
-
-## 🌐 Live Demo
-
-Try the playground in your browser:  
-https://mrbengutierrez.github.io/racket-rs/
 
 ## ✅ Currently Supported
 
