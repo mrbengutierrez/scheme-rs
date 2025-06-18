@@ -4,7 +4,7 @@ async function runWasm() {
     await init();
     console.log("✅ WASM initialized");
 
-    const ctx = EvalContext.new();
+    const ctx = EvalContext();
 
     const inputEl = document.getElementById("input");
     const outputEl = document.getElementById("output");
