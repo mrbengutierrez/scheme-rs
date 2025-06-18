@@ -1,0 +1,15 @@
+{
+  "name": "racket-rs",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "racket_rs_bg.wasm",
+    "racket_rs.js",
+    "racket_rs.d.ts"
+  ],
+  "main": "racket_rs.js",
+  "types": "racket_rs.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
