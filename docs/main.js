@@ -1,4 +1,4 @@
-import init, { eval_racket } from "../pkg/racket_rs.js";
+import init, { eval_racket } from "./pkg/racket_rs.js";
 
 async function runWasm() {
     await init();
