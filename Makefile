@@ -3,14 +3,21 @@ PACKAGE_NAME = racket-rs
 DOCS_DIR = docs
 PKG_DIR = $(DOCS_DIR)/pkg
 
-# Default target
-all: build copy
+# Build native CLI binary
+build-bin:
+	cargo build --release
 
-# Compile to WASM using wasm-pack
-build:
+# Build WebAssembly for the browser
+build-web:
 	wasm-pack build --target web --out-dir $(PKG_DIR)
 
+# Build everything
+build: build-bin build-web
+
+# Clean both binary and WASM output
 clean:
+	cargo clean
 	rm -rf $(PKG_DIR)
 	rm -f $(DOCS_DIR)/racket_rs*
+
 

@@ -1,7 +1,6 @@
 use wasm_bindgen::prelude::*;
-use std::rc::Rc;
 
-use crate::env::{default_env, Env};
+use crate::env::default_env;
 use crate::eval::eval;
 use crate::lexer::tokenize;
 use crate::parser::parse;
@@ -13,36 +12,24 @@ pub mod eval;
 pub mod env;
 pub mod builtins;
 
-/// Persistent evaluator context across calls
+/// Expose Racket eval to JavaScript
 #[wasm_bindgen]
-pub struct EvalContext {
-    env: Rc<Env>,
-}
+pub fn eval_racket(input: &str) -> String {
+    let env = default_env();
 
-/// Expose WASM to Javascript
-#[wasm_bindgen]
-impl EvalContext {
-    #[wasm_bindgen(constructor)]
-    pub fn new() -> EvalContext {
-        EvalContext {
-            env: default_env(),
-        }
-    }
+    let tokens = match tokenize(input) {
+        Ok(t) => t,
+        Err(e) => return format!("Lex error: {:?}", e),
+    };
 
-    pub fn eval(&self, input: &str) -> String {
-        let tokens = match tokenize(input) {
-            Ok(t) => t,
-            Err(e) => return format!("Lex error: {:?}", e),
-        };
+    let ast = match parse(tokens) {
+        Ok(a) => a,
+        Err(e) => return format!("Parse error: {:?}", e),
+    };
 
-        let ast = match parse(tokens) {
-            Ok(a) => a,
-            Err(e) => return format!("Parse error: {:?}", e),
-        };
-
-        match eval(&ast, self.env.clone()) {
-            Ok(val) => format!("{}", val),
-            Err(e) => format!("Eval error: {:?}", e),
-        }
+    match eval(&ast, env) {
+        Ok(val) => format!("{}", val),
+        Err(e) => format!("Eval error: {:?}", e),
     }
 }
+
