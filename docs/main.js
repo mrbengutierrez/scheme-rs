@@ -2,9 +2,9 @@ import init, { EvalContext } from "./pkg/racket_rs.js";
 
 async function runWasm() {
     await init();
-    console.log("✅ WASM initialized");
+    console.log("WASM initialized");
 
-    const ctx = EvalContext();
+    const ctx = new EvalContext();
 
     const inputEl = document.getElementById("input");
     const outputEl = document.getElementById("output");
