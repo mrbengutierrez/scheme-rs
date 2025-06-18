@@ -2,6 +2,22 @@
 
 A Rust-based Racket interpreter. Just a fun little project.
 
+## 🛠 Building
+
+To build the native CLI:
+make build-bin
+
+To build the browser demo (WebAssembly):
+make build-web
+
+To clean both:
+make clean
+
+## 🌐 Live Demo
+
+Try the playground in your browser:  
+https://mrbengutierrez.github.io/racket-rs/
+
 ## ✅ Currently Supported
 
 ### Literals
