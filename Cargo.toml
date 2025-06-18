@@ -9,7 +9,7 @@ wasm-bindgen = "0.2.100"
 # Testing config
 [lib]
 doctest = false
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [[bin]]
 name = "racket_rs"

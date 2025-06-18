@@ -9,3 +9,8 @@ all: build copy
 # Compile to WASM using wasm-pack
 build:
 	wasm-pack build --target web --out-dir $(PKG_DIR)
+
+clean:
+	rm -rf $(PKG_DIR)
+	rm -f $(DOCS_DIR)/racket_rs*
+
