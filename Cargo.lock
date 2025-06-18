@@ -45,7 +45,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "racket-rs"
+name = "racket_rs"
 version = "0.1.0"
 dependencies = [
  "wasm-bindgen",
