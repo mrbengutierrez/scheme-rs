@@ -10,13 +10,19 @@ https://mrbengutierrez.github.io/racket-rs/
 ## 🛠 Building
 
 To build the native CLI:
+```
 make build-bin
+```
 
 To build the browser demo (WebAssembly):
+```
 make build-web
+```
 
 To clean both:
+```
 make clean
+```
 
 ## ✅ Currently Supported
 
