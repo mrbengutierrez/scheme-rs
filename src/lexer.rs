@@ -43,7 +43,6 @@ pub fn tokenize(input: &str) -> Result<Vec<Token>, LexError> {
         }
     }
 
-    println!("{:?}", tokens);
     Ok(tokens)
 }
 

@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use std::rc::Rc;
 use std::cell::RefCell;
+use std::fmt;
 
 use crate::ast::Expr;
 use crate::builtins::*;
@@ -50,6 +51,27 @@ pub enum Value {
     Function(fn(Vec<Value>) -> Result<Value, EvalError>), // built-in functions
     Lambda(Lambda), // user-defined functions
     List(Vec<Value>),
+}
+
+impl fmt::Display for Value {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Value::Number(n) => write!(f, "{}", n),
+            Value::Boolean(true) => write!(f, "#t"),
+            Value::Boolean(false) => write!(f, "#f"),
+            Value::String(s) => write!(f, "\"{}\"", s),
+            Value::Symbol(s) => write!(f, "{}", s),
+            Value::Function(_) => write!(f, "<builtin-function>"),
+            Value::Lambda(_) => write!(f, "<lambda>"),
+            Value::List(values) => {
+                let contents = values.iter()
+                    .map(|v| format!("{}", v))
+                    .collect::<Vec<_>>()
+                    .join(" ");
+                write!(f, "({})", contents)
+            }
+        }
+    }
 }
 
 #[derive(Debug, Clone, PartialEq)]
