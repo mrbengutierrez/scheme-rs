@@ -1,5 +1,5 @@
 [package]
-name = "racket_rs"
+name = "scheme_rs"
 version = "0.1.0"
 edition = "2024"
 
@@ -12,6 +12,6 @@ doctest = false
 crate-type = ["cdylib", "rlib"]
 
 [[bin]]
-name = "racket_rs"
+name = "scheme_rs"
 path = "src/main.rs"
 test = false

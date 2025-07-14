@@ -1,11 +1,11 @@
-# racket-rs
+# scheme-rs
 
-A Rust-based Racket interpreter. Just a fun little project.
+A Rust-based Scheme interpreter. Just a fun little project.
 
 ## 🌐 Live Demo
 
 Try the playground in your browser:  
-https://mrbengutierrez.github.io/racket-rs/
+https://mrbengutierrez.github.io/scheme-rs/
 
 ## 🛠 Building
 
@@ -55,5 +55,5 @@ make clean
 ## ❌ Not Supported (yet)
 - Macros
 - Tail-call optimization
-- Full Racket standard library
+- Full Scheme standard library
 - Advanced types and I/O

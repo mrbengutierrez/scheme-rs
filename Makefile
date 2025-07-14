@@ -1,5 +1,5 @@
 # Project settings
-PACKAGE_NAME = racket-rs
+PACKAGE_NAME = scheme-rs
 DOCS_DIR = docs
 PKG_DIR = $(DOCS_DIR)/pkg
 
@@ -18,6 +18,6 @@ build: build-bin build-web
 clean:
 	cargo clean
 	rm -rf $(PKG_DIR)
-	rm -f $(DOCS_DIR)/racket_rs*
+	rm -f $(DOCS_DIR)/scheme_rs*
 
 

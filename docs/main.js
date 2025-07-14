@@ -1,4 +1,4 @@
-import init, { EvalContext } from "./pkg/racket_rs.js";
+import init, { EvalContext } from "./pkg/scheme_rs.js";
 
 async function runWasm() {
     await init();
@@ -16,7 +16,7 @@ async function runWasm() {
             inputEl.value = "";
 
             const result = ctx.eval_line(line);
-            appendOutput(`racket-rs> ${line}`);
+            appendOutput(`scheme-rs> ${line}`);
             appendOutput(result);
 
             // If user typed "exit", disable further input
@@ -32,7 +32,7 @@ async function runWasm() {
         outputEl.scrollTop = outputEl.scrollHeight;
     }
 
-    appendOutput("🦀 Welcome to the Racket REPL (WASM Edition)");
+    appendOutput("🦀 Welcome to the Scheme REPL (WASM Edition)");
     appendOutput("💀 Type `exit` or `quit` when your existential dread sets in.");
     appendOutput("");
 }
