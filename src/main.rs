@@ -1,20 +1,20 @@
 use std::io::{self, Write};
 
-use racket_rs::env::default_env;
-use racket_rs::eval::eval;
-use racket_rs::lexer::tokenize;
-use racket_rs::parser::parse;
+use scheme_rs::env::default_env;
+use scheme_rs::eval::eval;
+use scheme_rs::lexer::tokenize;
+use scheme_rs::parser::parse;
 
 fn main() {
     let env = default_env(); // REPL uses a persistent environment
     let stdin = io::stdin();
     let mut stdout = io::stdout();
 
-    println!("🦀 Welcome to the Racket REPL (Rust Edition)");
+    println!("🦀 Welcome to the Scheme REPL (Rust Edition)");
     println!("💀 Type `exit` or `quit` when your existential dread sets in.");
 
     loop {
-        print!("racket-rs> ");
+        print!("scheme-rs> ");
         stdout.flush().unwrap();
 
         let mut input = String::new();
