@@ -1,15 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Expose Racket eval to JavaScript
+ * Persistent REPL context
  */
-export function eval_racket(input: string): string;
+export class EvalContext {
+  free(): void;
+  constructor();
+  eval_line(input: string): string;
+}
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly eval_racket: (a: number, b: number) => [number, number];
+  readonly __wbg_evalcontext_free: (a: number, b: number) => void;
+  readonly evalcontext_new: () => number;
+  readonly evalcontext_eval_line: (a: number, b: number, c: number) => [number, number];
   readonly __wbindgen_export_0: WebAssembly.Table;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;

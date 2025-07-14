@@ -1,15 +1,15 @@
 [package]
-name = "racket-rs"
+name = "racket_rs"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-wasm-bindgen = "0.2"
+wasm-bindgen = "0.2.100"
 
 # Testing config
 [lib]
 doctest = false
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [[bin]]
 name = "racket_rs"
