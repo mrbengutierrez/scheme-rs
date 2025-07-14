@@ -1,15 +1,15 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Expose Racket eval to JavaScript
+ * Expose Scheme eval to JavaScript
  */
-export function eval_racket(input: string): string;
+export function eval_scheme(input: string): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly eval_racket: (a: number, b: number) => [number, number];
+  readonly eval_scheme: (a: number, b: number) => [number, number];
   readonly __wbindgen_export_0: WebAssembly.Table;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;

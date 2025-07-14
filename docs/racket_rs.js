@@ -74,17 +74,17 @@ function getStringFromWasm0(ptr, len) {
     return cachedTextDecoder.decode(getUint8ArrayMemory0().subarray(ptr, ptr + len));
 }
 /**
- * Expose Racket eval to JavaScript
+ * Expose Scheme eval to JavaScript
  * @param {string} input
  * @returns {string}
  */
-export function eval_racket(input) {
+export function eval_scheme(input) {
     let deferred2_0;
     let deferred2_1;
     try {
         const ptr0 = passStringToWasm0(input, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.eval_racket(ptr0, len0);
+        const ret = wasm.eval_scheme(ptr0, len0);
         deferred2_0 = ret[0];
         deferred2_1 = ret[1];
         return getStringFromWasm0(ret[0], ret[1]);
@@ -193,7 +193,7 @@ async function __wbg_init(module_or_path) {
     }
 
     if (typeof module_or_path === 'undefined') {
-        module_or_path = new URL('racket_rs_bg.wasm', import.meta.url);
+        module_or_path = new URL('scheme_rs_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 

@@ -1,6 +1,6 @@
-# racket-rs
+# scheme-rs
 
-A Rust-based Racket interpreter. Just a fun little project.
+A Rust-based Scheme interpreter. Just a fun little project.
 
 ## ✅ Currently Supported
 
@@ -33,5 +33,5 @@ A Rust-based Racket interpreter. Just a fun little project.
 ## ❌ Not Supported (yet)
 - Macros
 - Tail-call optimization
-- Full Racket standard library
+- Full Scheme standard library
 - Advanced types and I/O

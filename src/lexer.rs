@@ -15,7 +15,7 @@ pub enum LexError {
     InvalidToken(String),
 }
 
-/// Tokenizes a Racket source string into a vector of `Token`s.
+/// Tokenizes a Scheme source string into a vector of `Token`s.
 /// 
 /// Parses the input string into tokens including parentheses, symbols,
 /// numbers, booleans, string literals, and skips comments and whitespace.

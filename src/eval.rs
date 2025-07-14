@@ -3,7 +3,7 @@ use std::rc::Rc;
 use crate::env::{Env, EvalError, Value, Lambda};
 use crate::ast::Expr;
 
-/// Evaluates a Racket expression in the given environment.
+/// Evaluates a Scheme expression in the given environment.
 ///
 /// Supports literals (number, boolean, string), variable lookup, and
 /// special forms: `define`, `lambda`, `begin`, `if`, and `let`.
@@ -11,7 +11,7 @@ use crate::ast::Expr;
 /// functions (lambdas).
 ///
 /// # Arguments
-/// * `expr` - The Racket expression to evaluate.
+/// * `expr` - The Scheme expression to evaluate.
 /// * `env` - The current lexical environment.
 ///
 /// # Returns

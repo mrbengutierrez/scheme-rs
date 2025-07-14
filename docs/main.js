@@ -1,11 +1,11 @@
-import init, { eval_racket } from "../pkg/racket_rs.js";
+import init, { eval_scheme } from "../pkg/scheme_rs.js";
 
 async function runWasm() {
     await init();
 
     window.run = function () {
         const input = document.getElementById("input").value;
-        const output = eval_racket(input);
+        const output = eval_scheme(input);
         document.getElementById("output").textContent = output;
     };
 }

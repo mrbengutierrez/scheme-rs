@@ -12,9 +12,9 @@ pub mod eval;
 pub mod env;
 pub mod builtins;
 
-/// Expose Racket eval to JavaScript
+/// Expose Scheme eval to JavaScript
 #[wasm_bindgen]
-pub fn eval_racket(input: &str) -> String {
+pub fn eval_scheme(input: &str) -> String {
     let env = default_env();
 
     let tokens = match tokenize(input) {
