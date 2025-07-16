@@ -31,6 +31,12 @@ jobs:
       - name: Build WebAssembly package
         run: wasm-pack build --target web --out-dir docs/pkg
 
+      - name: debug
+        run: ls docs/
+
+      - name: debug
+        run: ls docs/pkg
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4     
         with:
