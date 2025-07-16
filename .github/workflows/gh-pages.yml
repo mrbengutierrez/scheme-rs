@@ -1,36 +1,37 @@
-name: Deploy WASM to GitHub Pages
+name: Deploy WASM to GitHub Pages
 
 on:
   push:
-    branches: [main] 
+    branches: [main]        
   pull_request:
-    branches: [main]
+    branches: [main]         
 
 permissions:
-  contents: write  # needed to push to gh-pages
+  contents: write     # allow the workflow to push to gh-pages
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4 
 
-      - uses: actions-rs/toolchain@v1
+      - name: Set up Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1   
         with:
           toolchain: stable
           target: wasm32-unknown-unknown
-          override: true
 
-      - name: Install wasm-pack
+      - name: Install wasm‑pack
         run: cargo install wasm-pack
 
-      - name: Build WASM
+      - name: Build WebAssembly package
         run: wasm-pack build --target web --out-dir docs/pkg
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4     
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./docs      # serves docs + pkg on gh‑pages
 
