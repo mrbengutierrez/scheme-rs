@@ -3,6 +3,8 @@ name: Deploy WASM to GitHub Pages
 on:
   push:
     branches: [main]  # or your main branch
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write  # needed to push to gh-pages
